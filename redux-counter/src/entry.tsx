@@ -5,13 +5,16 @@ import { createStore } from 'redux';
 // redux devtool
 const reduxDevTool = (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
 
+// type actions
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
+interface Store {
+    count: number;
+}
+
 // reducer
-const reducer = (state, action) => {
-    console.log('reducer state', state);
-    console.log('reducer action', action);
+const reducer = (state: Store, action): Store => {
     if(action.type === INCREMENT) {
         return {
             count: state.count + 1
@@ -26,8 +29,7 @@ const reducer = (state, action) => {
 }
 
 // store
-//const store = createStore(reducer, (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__());
-const store = createStore(reducer, { count: 0 } as any, reduxDevTool);
+const store = createStore(reducer, { count: 0 }, reduxDevTool);
 
 const node = document.createElement('div');
 document.body.appendChild(node);
