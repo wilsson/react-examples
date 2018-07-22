@@ -2,4 +2,6 @@
 /counter-vanilla/node_modules
 /redux-counter/node_modules
 /react-redux-counter/node_modules
-/react-redux-shopping-cart/node_modules
+/shopping-cart/node_modules
+/shopping-cart-react-mobx/node_modules
+/shopping-cart-react-redux/node_modules
