@@ -14,11 +14,26 @@ module.exports = {
     devtool: 'source-map',
     module: {
         rules: [
-          {
-            test: /\.tsx?$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader'
-          }
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.(eot|otf|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader",
+                    "css-loader"
+                ]
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'ts-loader'
+            }
         ]
     },
     plugins: [

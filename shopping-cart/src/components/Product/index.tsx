@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Card, Icon, Image, Button, Label } from 'semantic-ui-react'
-import { ProductModel } from '../../models/product';
 
-interface Props extends ProductModel {
-    handleAddToCart?: any;
-}
-
-export const Product: React.SFC<Props> = ({
+export const Product = ({
     image,
     name,
     price,
