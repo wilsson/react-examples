@@ -1,7 +1,8 @@
+import axios from 'axios';
 import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
-    CONFIRM_PURCHASE
+    CONFIRM_PURCHASE,
 } from '../constants/actionTypes';
 
 export const addToCart = (product) => ({

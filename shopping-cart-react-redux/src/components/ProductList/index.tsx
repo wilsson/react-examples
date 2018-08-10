@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Product } from '../Product';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Message } from 'semantic-ui-react'
 
 interface Props {
-    products: any[];
-    handleAddToCart: any;
+    products?: any[];
+    handleAddToCart?: any;
 }
 
 export const ProductList: React.SFC<Props> = ({ products, handleAddToCart }) => (

@@ -21,7 +21,7 @@ export const Product: React.SFC<Props> = ({
             <Card.Header>{name}</Card.Header>
         </Card.Content>
         <Card.Content extra>
-            <Button primary size="tiny" onClick={handleAddToCart}>
+            <Button primary size="tiny" onClick={handleAddToCart} className="qa-btn_add-to-cart">
                 <Icon name="shop" />
                 Añadir al carrito
             </Button>

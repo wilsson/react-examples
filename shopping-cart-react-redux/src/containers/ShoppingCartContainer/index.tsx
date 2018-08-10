@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { removeFromCart, confirmPurchase } from '../../actions';
+import { removeFromCart, confirmPurchase } from '../../actions/cart';
 import { ShoppingCart } from '../../components/ShoppingCart'
 import { ProductModel } from '../../models/product';
 
@@ -13,6 +13,7 @@ interface Props {
     handleRemoveToCart?: any;
     handleToogleModal?: any;
     handleConfirmPurchase?: any;
+    loggedIn?: boolean;
 }
 
 class Container extends React.Component<Props, State> {
@@ -29,13 +30,15 @@ class Container extends React.Component<Props, State> {
                 {...this.props}
                 open={this.state.open}
                 handleToogleModal={this.handleToogleModal}
+                loggedIn={this.props.loggedIn}
             />
         )
     }
 }
 
 const mapStateToProps = state => ({
-    cart: state.cart
+    cart: state.cart,
+    loggedIn: state.login.loggedIn
 });
 
 const mapDispatchToProps = dispatch => ({
