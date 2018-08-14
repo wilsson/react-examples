@@ -23,3 +23,21 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('login', () => {
+    cy.fixture('user/admin.json').as('userJSON');
+    cy.get('@userJSON')
+        .then((user) => {
+            cy.get('[data-test=btn-modal-login]')
+                .click();
+            cy.get('input[name="name"]')
+                .type(user.email)
+                .should('have.value', user.email);
+            cy.get('input[name="password"]')
+                .type(user.password)
+                .should('have.value', user.password);
+            cy.get('[data-test=btn-login]')
+                .click();
+        });
+})

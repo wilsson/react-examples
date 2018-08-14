@@ -1,19 +1,16 @@
 describe('App Shopping Cart', function() {
     beforeEach(function () {
-        cy.visit('http://localhost:8080')
+        cy.visit('http://localhost:8080');
+        //cy.screenshot();
+        cy.login();
     })
     it('Comprar producto', () => {
-        cy.get('.qa-btn__login')
-            .click();
-        cy.get('input[name="name"]').type('wilson');
-        cy.get('input[name="password"]').type('123456')
-        cy.get('.qa-btn__login-go')
-            .click();
-        cy.get('.qa-btn_add-to-cart')
+        cy.get('[data-test=btn-add-to-cart]')
           .click({ multiple: true });
-        cy.get('.qa-btn_checkout')
+        cy.get('[data-test=btn-checkout]')
           .click();
-        cy.get('.qa-btn_checkout-confirm')
+        cy.get('[data-test=btn-checkout-confirm]')
           .click();
+        //cy.screenshot();
     })
 })

@@ -54,7 +54,7 @@ export const ShoppingCart: React.SFC<Props> = ({
                 </Table.Row>
                 <Table.Row>
                     <Table.HeaderCell>
-                        <Button disabled={!loggedIn} icon primary size='tiny' onClick={handleToogleModal} className="qa-btn_checkout">
+                        <Button disabled={!loggedIn} icon primary size='tiny' onClick={handleToogleModal} data-test="btn-checkout">
                             <Icon name='send' /> Comprar
                         </Button>
                     </Table.HeaderCell>
@@ -68,7 +68,7 @@ export const ShoppingCart: React.SFC<Props> = ({
             onCancel={handleToogleModal}
             content="Confirmar compra"
             cancelButton="Cancelar"
-            confirmButton={<Button className="qa-btn_checkout-confirm">Comprar</Button>}
+            confirmButton={<Button data-test="btn-checkout-confirm">Comprar</Button>}
             onConfirm={() => {
                 handleConfirmPurchase();
                 handleToogleModal();
